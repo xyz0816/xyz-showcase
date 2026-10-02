@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">XYZ 本地多模态工作台架构示意图</title>
+  <desc id="desc">展示用户界面、模型路由、本地文本与图片引擎、知识库与明确网络边界的原创示意图。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07110f"/>
+      <stop offset="1" stop-color="#101c17"/>
+    </linearGradient>
+    <linearGradient id="mint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9affcf"/>
+      <stop offset="1" stop-color="#31bf7b"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3d899"/>
+      <stop offset="1" stop-color="#9b7d39"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#66dca2"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e6c678"/>
+    </marker>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .08em; }
+      .title { fill: #f0fff7; font-size: 38px; font-weight: 700; }
+      .subtitle { fill: #9ab9aa; font-size: 16px; }
+      .cardTitle { fill: #edfff5; font-size: 20px; font-weight: 650; }
+      .cardText { fill: #a8c8b8; font-size: 14px; }
+      .small { fill: #91b2a1; font-size: 12px; }
+      .tag { fill: #07110f; font-size: 12px; font-weight: 650; }
+      .card { fill: #10211a; stroke: #2f7758; stroke-width: 1.5; }
+      .soft { fill: #0d1b16; stroke: #295e49; stroke-width: 1.2; }
+      .goldCard { fill: #201e15; stroke: #8d7541; stroke-width: 1.3; }
+      .line { fill: none; stroke: #66dca2; stroke-width: 2; marker-end: url(#arrow); }
+      .goldLine { fill: none; stroke: #e6c678; stroke-width: 2; stroke-dasharray: 6 6; marker-end: url(#arrowGold); }
+    </style>
+  </defs>
+
+  <rect width="1200" height="760" rx="28" fill="url(#bg)"/>
+  <circle cx="1070" cy="80" r="160" fill="#174b35" opacity=".16"/>
+  <circle cx="1100" cy="95" r="88" fill="none" stroke="#4dcc91" stroke-width="1" opacity=".22"/>
+  <circle cx="1100" cy="95" r="58" fill="none" stroke="#4dcc91" stroke-width="1" opacity=".22"/>
+
+  <g transform="translate(64 62)">
+    <circle cx="24" cy="24" r="20" fill="none" stroke="url(#mint)" stroke-width="3" filter="url(#glow)"/>
+    <circle cx="24" cy="24" r="8" fill="#b7ffda"/>
+    <circle cx="24" cy="24" r="31" fill="none" stroke="#42c88c" stroke-width="1" opacity=".45"/>
+    <text x="72" y="28" class="title sans">XYZ</text>
+    <text x="72" y="57" class="subtitle sans">本地多模态工作台 · LOCAL-FIRST MULTIMODAL WORKSPACE</text>
+  </g>
+  <text x="66" y="164" class="small mono">SCHEMATIC / 示意图 · NOT A RUNTIME TRACE</text>
+
+  <g transform="translate(66 206)">
+    <rect width="210" height="142" rx="18" class="card"/>
+    <circle cx="30" cy="32" r="10" fill="#9affcf"/>
+    <text x="52" y="39" class="cardTitle sans">用户入口</text>
+    <text x="24" y="77" class="cardText sans">对话 · 附件 · 项目</text>
+    <text x="24" y="102" class="cardText sans">写作 · 图片 · 证据</text>
+    <text x="24" y="126" class="small sans">one workspace, many modes</text>
+  </g>
+
+  <g transform="translate(330 188)">
+    <rect width="246" height="178" rx="20" class="card"/>
+    <rect x="22" y="22" width="86" height="24" rx="12" fill="url(#mint)"/>
+    <text x="65" y="39" text-anchor="middle" class="tag sans">CONTROL</text>
+    <text x="22" y="81" class="cardTitle sans">状态与路由</text>
+    <text x="22" y="111" class="cardText sans">AppState · Stores</text>
+    <text x="22" y="136" class="cardText sans">草稿 · 队列 · 成果</text>
+    <text x="22" y="161" class="small sans">按任务分配资源</text>
+  </g>
+
+  <path d="M276 277 C296 277 306 277 330 277" class="line"/>
+
+  <g transform="translate(630 188)">
+    <rect width="234" height="178" rx="20" class="card"/>
+    <rect x="22" y="22" width="108" height="24" rx="12" fill="url(#mint)"/>
+    <text x="76" y="39" text-anchor="middle" class="tag sans">MODEL ROUTER</text>
+    <text x="22" y="81" class="cardTitle sans">两条本地模型路径</text>
+    <text x="22" y="111" class="cardText sans">XYZ 3.8 · 对话 / 视觉</text>
+    <text x="22" y="136" class="cardText sans">XYZ Image · 图片任务</text>
+    <text x="22" y="161" class="small sans">switch with explicit state</text>
+  </g>
+
+  <path d="M576 277 C596 277 610 277 630 277" class="line"/>
+
+  <g transform="translate(916 188)">
+    <rect width="218" height="178" rx="20" class="soft"/>
+    <circle cx="32" cy="34" r="10" fill="#e6c678"/>
+    <text x="54" y="40" class="cardTitle sans">本机边界</text>
+    <text x="22" y="81" class="cardText sans">模型 · 会话 · 知识库</text>
+    <text x="22" y="106" class="cardText sans">草稿 · 生成记录</text>
+    <text x="22" y="141" class="small sans">safe mode = no public search</text>
+  </g>
+
+  <path d="M864 277 C884 277 894 277 916 277" class="line"/>
+
+  <g transform="translate(66 442)">
+    <rect width="314" height="186" rx="20" class="card"/>
+    <rect x="22" y="22" width="88" height="24" rx="12" fill="url(#mint)"/>
+    <text x="66" y="39" text-anchor="middle" class="tag sans">EVIDENCE</text>
+    <text x="22" y="81" class="cardTitle sans">材料 → 证据 → 写作</text>
+    <text x="22" y="112" class="cardText sans">本地索引与原文定位</text>
+    <text x="22" y="138" class="cardText sans">写作工作室与成果版本</text>
+    <text x="22" y="164" class="small sans">attachments stay traceable</text>
+  </g>
+
+  <g transform="translate(442 442)">
+    <rect width="314" height="186" rx="20" class="card"/>
+    <rect x="22" y="22" width="76" height="24" rx="12" fill="url(#mint)"/>
+    <text x="60" y="39" text-anchor="middle" class="tag sans">IMAGE</text>
+    <text x="22" y="81" class="cardTitle sans">可恢复图片队列</text>
+    <text x="22" y="112" class="cardText sans">暂停 · 继续 · 取消 · 重试</text>
+    <text x="22" y="138" class="cardText sans">引擎按需启动与空闲回收</text>
+    <text x="22" y="164" class="small sans">progress is part of the UI</text>
+  </g>
+
+  <g transform="translate(818 442)">
+    <rect width="316" height="186" rx="20" class="goldCard"/>
+    <rect x="22" y="22" width="102" height="24" rx="12" fill="url(#gold)"/>
+    <text x="73" y="39" text-anchor="middle" class="tag sans">NETWORK GATE</text>
+    <text x="22" y="81" class="cardTitle sans">安全 / 联网</text>
+    <text x="22" y="112" class="cardText sans">安全：停留在本机</text>
+    <text x="22" y="138" class="cardText sans">联网：只发送当前检索词或网址</text>
+    <text x="22" y="164" class="small sans">explicit boundary, visible choice</text>
+  </g>
+
+  <path d="M453 366 C370 398 280 412 223 442" class="line"/>
+  <path d="M747 366 C678 402 625 416 602 442" class="line"/>
+  <path d="M1008 366 C1008 398 980 416 976 442" class="goldLine"/>
+
+  <text x="66" y="704" class="small sans">Local data boundary · Explicit resource lifecycle · Human-reviewed decisions</text>
+  <text x="1134" y="704" text-anchor="end" class="small mono">XYZ / 2026</text>
+</svg>
