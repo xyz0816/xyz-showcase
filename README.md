@@ -59,6 +59,12 @@ XYZ is a local-first desktop client for conversation, image understanding, writi
 
 真实模型和图片引擎测试需要在私有源项目中另行准备模型与测试素材。现有历史记录与本轮审阅边界见 [验证记录](docs/validation.md)，组件关系见 [架构说明](docs/architecture.md)。公开展示仓库不包含可运行的应用源码或安装包。
 
+## 界面迭代记录
+
+![XYZ 图片队列的测试状态界面渲染](assets/image-queue-preview.png)
+
+这是 2026-09-22、0.16.1 / Build 19 的隔离测试状态渲染，使用合成对话与任务来呈现跨对话图片排队。它不是私人使用记录，也不是 0.18.1 的当前运行截图。
+
 ## English overview
 
 XYZ combines a SwiftUI client with explicit model switching, recoverable image queues, local evidence tools, and a clear network boundary. This repository contains the project case study and original schematic illustrations. Application source and model files remain private.
